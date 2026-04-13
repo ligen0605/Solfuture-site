@@ -8,30 +8,22 @@
 <meta name="keywords" content="solar panels Australia, home battery, solar installation Melbourne, commercial solar">
 
 <style>
-
 body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f4f6fb;color:#1f2937}
-
 .container{width:90%;max-width:1200px;margin:auto}
-
 header{background:#0f172a;color:white;padding:18px 0;position:sticky;top:0;z-index:10}
-
 nav{display:flex;justify-content:space-between;align-items:center}
-
 nav a{color:white;margin-left:24px;text-decoration:none;font-size:15px}
-
 nav a:hover{color:#f59e0b}
-
 .logo{font-size:22px;font-weight:bold}
 
 .hero{
-background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url("https://images.unsplash.com/photo-1509391366360-2e959784a276") center/cover;
+background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url("https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1600&q=80") center/cover;
 color:white;
 padding:140px 20px;
 text-align:center
 }
 
 .hero h1{font-size:48px;margin-bottom:15px}
-
 .hero p{font-size:20px;margin-bottom:30px}
 
 .btn{
@@ -43,11 +35,9 @@ border-radius:6px;
 text-decoration:none;
 font-weight:bold
 }
-
 .btn:hover{background:#d97706}
 
 section{padding:80px 0}
-
 h2{text-align:center;margin-bottom:50px;font-size:32px}
 
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px}
@@ -59,23 +49,8 @@ border-radius:10px;
 box-shadow:0 8px 25px rgba(0,0,0,.08)
 }
 
-.card img{width:100%;border-radius:8px;margin-bottom:15px}
-
-.package{
-text-align:center
-}
-
-.price{
-font-size:34px;
-color:#f59e0b;
-margin:10px 0
-}
-
-.benefits{background:#ffffff}
-
-.review{
-font-style:italic
-}
+.package{text-align:center}
+.price{font-size:34px;color:#f59e0b;margin:10px 0}
 
 .contact{
 background:#0f172a;
@@ -90,6 +65,74 @@ border-radius:6px;
 border:none
 }
 
+/* AUTO LOGO WALL */
+.logo-wall{
+position:relative;
+overflow:hidden;
+padding:10px 0;
+}
+
+.logo-track{
+display:flex;
+gap:28px;
+width:max-content;
+animation:logoScroll 28s linear infinite;
+}
+
+.logo-wall:hover .logo-track{
+animation-play-state:paused;
+}
+
+.brand-card{
+flex:0 0 260px;
+height:170px;
+background:white;
+border-radius:18px;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:22px;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+overflow:hidden;
+transition:transform .3s ease, box-shadow .3s ease;
+}
+
+.brand-card:hover{
+transform:translateY(-4px);
+box-shadow:0 12px 30px rgba(0,0,0,.12);
+}
+
+.brand-card img{
+width:100%;
+height:100%;
+object-fit:contain;
+display:block;
+}
+
+.logo-fade{
+position:absolute;
+top:0;
+bottom:0;
+width:80px;
+z-index:2;
+pointer-events:none;
+}
+
+.logo-fade.left{
+left:0;
+background:linear-gradient(to right, #f4f6fb 0%, rgba(244,246,251,0) 100%);
+}
+
+.logo-fade.right{
+right:0;
+background:linear-gradient(to left, #f4f6fb 0%, rgba(244,246,251,0) 100%);
+}
+
+@keyframes logoScroll{
+0%{transform:translateX(0);}
+100%{transform:translateX(-50%);}
+}
+
 footer{
 background:#020617;
 color:white;
@@ -98,25 +141,11 @@ padding:30px
 }
 
 @media(max-width:768px){
-
 .hero h1{font-size:34px}
-
 nav{flex-direction:column;gap:10px}
-
+.brand-card{flex:0 0 220px;height:140px}
 }
-
 </style>
-
-
-<style>
-.logo-wall{position:relative;overflow:hidden;padding:10px 0;}
-.logo-track{display:flex;gap:28px;width:max-content;animation:logoScroll 28s linear infinite;}
-.logo-wall:hover .logo-track{animation-play-state:paused;}
-.brand-card{flex:0 0 260px;height:170px;background:white;border-radius:18px;display:flex;align-items:center;justify-content:center;padding:22px;box-shadow:0 8px 25px rgba(0,0,0,.08);overflow:hidden;transition:transform .3s ease, box-shadow .3s ease;}
-.brand-card img{width:100%;height:100%;object-fit:contain;display:block;}
-@keyframes logoScroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
-</style>
-
 </head>
 
 <body>
@@ -130,7 +159,7 @@ nav{flex-direction:column;gap:10px}
 <a href="#services">Services</a>
 <a href="#packages">Packages</a>
 <a href="#projects">Projects</a>
-<a href="#reviews">Reviews</a>
+<a href="#brands">Brands</a>
 <a href="#contact">Contact</a>
 </div>
 </nav>
@@ -138,55 +167,32 @@ nav{flex-direction:column;gap:10px}
 </header>
 
 <section class="hero">
-
 <h1>Solar Power For Your Future</h1>
 <p>Residential & Commercial Solar + Battery Storage Solutions</p>
-
 <a class="btn" href="#contact">Get Free Quote</a>
-
 </section>
 
 <section id="services">
 <div class="container">
 <h2>Our Services</h2>
-
 <div class="grid">
-
-<div class="card">
-<h3>Solar Panel Installation</h3>
-<p>High efficiency solar systems designed for Australian homes and businesses.</p>
-</div>
-
-<div class="card">
-<h3>Battery Storage</h3>
-<p>Store solar energy and reduce reliance on the grid with modern battery systems.</p>
-</div>
-
-<div class="card">
-<h3>Commercial Solar</h3>
-<p>Large scale solar solutions to reduce operating costs for businesses.</p>
-</div>
-
-<div class="card">
-<h3>EV Charger Installation</h3>
-<p>Smart EV charging integrated with your solar system.</p>
-</div>
-
+<div class="card"><h3>Solar Panel Installation</h3><p>High efficiency solar systems designed for Australian homes and businesses.</p></div>
+<div class="card"><h3>Battery Storage</h3><p>Store solar energy and reduce reliance on the grid with modern battery systems.</p></div>
+<div class="card"><h3>Commercial Solar</h3><p>Large scale solar solutions to reduce operating costs for businesses.</p></div>
+<div class="card"><h3>EV Charger Installation</h3><p>Smart EV charging integrated with your solar system.</p></div>
 </div>
 </div>
 </section>
 
 <section id="packages">
 <div class="container">
-<h2>Popular Solar Packages</h2>
-
+<h2>Popular Battery Packages</h2>
 <div class="grid">
-
 <div class="card package">
-<h3>5kW Solar + 28.8kWh Battery</h3>
+<h3>5kW Inverter + 28.8kWh Battery</h3>
 <p>AC coupled system with 28.8kWh battery storage</p>
 <div class="price">From $3,990</div>
-<p>Idealy for household for 2-3</p>
+<p>Ideal for households of 2–3</p>
 <a class="btn" href="#contact">Enquire</a>
 </div>
 
@@ -194,140 +200,72 @@ nav{flex-direction:column;gap:10px}
 <h3>5kW Inverter + 48kWh Battery</h3>
 <p>Large battery capacity for energy independence</p>
 <div class="price">From $4,990</div>
-<p>High efficiency panels</p>
+<p>Best choice for large house and full rebate</p>
 <a class="btn" href="#contact">Enquire</a>
 </div>
 
 <div class="card package">
 <h3>10kW Inverter + 48kWh Battery</h3>
-<p>High power inverter with large battery storage</p>
-<div class="price">From $5,490</div>
-<p>Best choice for large house and full rebate</p>
+<p>Higher power with large battery storage</p>
+<div class="price">From $5,990</div>
+<p>Best choice for high power usage and full rebate</p>
 <a class="btn" href="#contact">Enquire</a>
 </div>
-
 </div>
-
 </div>
 </section>
 
 <section id="projects">
 <div class="container">
 <h2>Recent Installations</h2>
-
 <div class="grid">
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d">
-<h3>Melbourne Residential</h3>
-<p>10kW solar system installed.</p>
+<div class="card"><h3>Melbourne Residential</h3><p>10kW solar system installed.</p></div>
+<div class="card"><h3>Commercial Warehouse</h3><p>50kW solar installation.</p></div>
+<div class="card"><h3>Solar + Battery</h3><p>Hybrid solar and battery storage system.</p></div>
 </div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1584277261846-c6a1672ed979">
-<h3>Commercial Warehouse</h3>
-<p>50kW solar installation.</p>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1592833159057-02c4c7d7e55d">
-<h3>Solar + Battery</h3>
-<p>Hybrid solar and battery storage system.</p>
-</div>
-
-</div>
-
 </div>
 </section>
 
-<section id="reviews" class="benefits">
+<section id="brands">
 <div class="container">
-<h2>Customer Reviews</h2>
+<h2>Trusted Brands We Work With</h2>
 
-<div class="grid">
+<div class="logo-wall">
+<div class="logo-fade left"></div>
+<div class="logo-fade right"></div>
 
-<div class="card review">
-"Great installation experience. Our electricity bill dropped dramatically."
-<br><br>⭐⭐⭐⭐⭐
+<div class="logo-track">
+<div class="brand-card"><img src="assets/neovolt.png" alt="Neovolt logo"></div>
+<div class="brand-card"><img src="assets/foxess.png" alt="FoxESS logo"></div>
+<div class="brand-card"><img src="assets/dmegc.png" alt="DMEGC logo"></div>
+<div class="brand-card"><img src="assets/jinko.png" alt="Jinko logo"></div>
+<div class="brand-card"><img src="assets/clenergy.png" alt="Clenergy logo"></div>
+
+<div class="brand-card"><img src="assets/neovolt.png" alt="Neovolt logo"></div>
+<div class="brand-card"><img src="assets/foxess.png" alt="FoxESS logo"></div>
+<div class="brand-card"><img src="assets/dmegc.png" alt="DMEGC logo"></div>
+<div class="brand-card"><img src="assets/jinko.png" alt="Jinko logo"></div>
+<div class="brand-card"><img src="assets/clenergy.png" alt="Clenergy logo"></div>
 </div>
-
-<div class="card review">
-"Professional team and very competitive pricing."
-<br><br>⭐⭐⭐⭐⭐
 </div>
-
-<div class="card review">
-"Highly recommend Solfuture Energy for solar systems."
-<br><br>⭐⭐⭐⭐⭐
-</div>
-
-</div>
-
 </div>
 </section>
 
 <section id="contact" class="contact">
 <div class="container">
 <h2>Get A Free Quote</h2>
-
 <form>
-
 <input type="text" placeholder="Your Name">
-
 <input type="email" placeholder="Email">
-
 <input type="text" placeholder="Phone Number">
-
 <textarea placeholder="Tell us about your solar needs"></textarea>
-
 <button class="btn">Submit</button>
-
 </form>
-
 </div>
 </section>
 
-<section id="calculator">
-<div class="container">
-<h2>Solar Savings Calculator</h2>
-<div class="card">
-<p>Estimate your potential savings with solar + battery.</p>
-<input id="bill" type="number" placeholder="Monthly electricity bill ($)">
-<input id="sun" type="number" placeholder="Average daily sun hours" value="4">
-<button class="btn" onclick="calcSavings()">Calculate</button>
-<p id="result"></p>
-</div>
-</div>
-</section>
-
-<section id="quote-estimator">
-<div class="container">
-<h2>Instant Battery Quote Estimator</h2>
-<div class="grid">
-<div class="card">
-<h3>5kW + 28.8kWh</h3>
-<p>Estimated from $9,990 installed</p>
-</div>
-<div class="card">
-<h3>5kW + 48kWh</h3>
-<p>Estimated from $13,990 installed</p>
-</div>
-<div class="card">
-<h3>10kW + 48kWh</h3>
-<p>Estimated from $16,990 installed</p>
-</div>
-</div>
-</div>
-</section>
-
-<section id="reviews">
-<div class="container">
-<h2>Google Reviews</h2>
-<div class="grid">
-<div class="car
-
+<footer>
 <p>© 2026 Solfuture Energy</p>
-
 </footer>
 
 </body>
