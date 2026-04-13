@@ -90,84 +90,6 @@ border-radius:6px;
 border:none
 }
 
-
-
-#brands{background:#ffffff}
-
-.logo-marquee{
-position:relative;
-overflow:hidden;
-padding:18px 0;
-}
-
-.logo-marquee::before,
-.logo-marquee::after{
-content:"";
-position:absolute;
-top:0;
-width:120px;
-height:100%;
-z-index:2;
-pointer-events:none;
-}
-
-.logo-marquee::before{
-left:0;
-background:linear-gradient(to right,#ffffff 0%,rgba(255,255,255,0) 100%);
-}
-
-.logo-marquee::after{
-right:0;
-background:linear-gradient(to left,#ffffff 0%,rgba(255,255,255,0) 100%);
-}
-
-.logo-track{
-display:flex;
-width:max-content;
-gap:22px;
-animation:brandScroll 28s linear infinite;
-align-items:center;
-}
-
-.logo-marquee:hover .logo-track{
-animation-play-state:paused;
-}
-
-.logo-item{
-flex:0 0 auto;
-width:220px;
-height:96px;
-display:flex;
-align-items:center;
-justify-content:center;
-background:#fff;
-border:1px solid #e5e7eb;
-border-radius:16px;
-box-shadow:0 10px 28px rgba(15,23,42,.08);
-padding:20px 26px;
-}
-
-.logo-item img{
-max-width:100%;
-max-height:48px;
-object-fit:contain;
-filter:grayscale(100%);
-opacity:.82;
-transition:all .25s ease;
-}
-
-.logo-item:hover img{
-filter:none;
-opacity:1;
-transform:scale(1.04);
-}
-
-@keyframes brandScroll{
-0%{transform:translateX(0)}
-100%{transform:translateX(calc(-50% - 11px))}
-}
-
-
 footer{
 background:#020617;
 color:white;
@@ -185,6 +107,16 @@ nav{flex-direction:column;gap:10px}
 
 </style>
 
+
+<style>
+.logo-wall{position:relative;overflow:hidden;padding:10px 0;}
+.logo-track{display:flex;gap:28px;width:max-content;animation:logoScroll 28s linear infinite;}
+.logo-wall:hover .logo-track{animation-play-state:paused;}
+.brand-card{flex:0 0 260px;height:170px;background:white;border-radius:18px;display:flex;align-items:center;justify-content:center;padding:22px;box-shadow:0 8px 25px rgba(0,0,0,.08);overflow:hidden;transition:transform .3s ease, box-shadow .3s ease;}
+.brand-card img{width:100%;height:100%;object-fit:contain;display:block;}
+@keyframes logoScroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+</style>
+
 </head>
 
 <body>
@@ -198,7 +130,7 @@ nav{flex-direction:column;gap:10px}
 <a href="#services">Services</a>
 <a href="#packages">Packages</a>
 <a href="#projects">Projects</a>
-<a href="#brands">Brands</a>
+<a href="#reviews">Reviews</a>
 <a href="#contact">Contact</a>
 </div>
 </nav>
@@ -251,7 +183,7 @@ nav{flex-direction:column;gap:10px}
 <div class="grid">
 
 <div class="card package">
-<h3>5kW Inverter + 28.8kWh Battery</h3>
+<h3>5kW Solar + 28.8kWh Battery</h3>
 <p>AC coupled system with 28.8kWh battery storage</p>
 <div class="price">From $3,990</div>
 <p>Idealy for household for 2-3</p>
@@ -262,15 +194,15 @@ nav{flex-direction:column;gap:10px}
 <h3>5kW Inverter + 48kWh Battery</h3>
 <p>Large battery capacity for energy independence</p>
 <div class="price">From $4,990</div>
-<p>Best choice for large house and full rebate</p>
+<p>High efficiency panels</p>
 <a class="btn" href="#contact">Enquire</a>
 </div>
 
 <div class="card package">
 <h3>10kW Inverter + 48kWh Battery</h3>
-<p>Higher power with large battery storage</p>
-<div class="price">From $5,990</div>
-<p>Best choice for high power usage and full rebate</p>
+<p>High power inverter with large battery storage</p>
+<div class="price">From $5,490</div>
+<p>Best choice for large house and full rebate</p>
 <a class="btn" href="#contact">Enquire</a>
 </div>
 
@@ -308,24 +240,29 @@ nav{flex-direction:column;gap:10px}
 </div>
 </section>
 
-<section id="brands">
+<section id="reviews" class="benefits">
 <div class="container">
-<h2>Trusted Brands We Work With</h2>
-<div class="logo-marquee" aria-label="Brand logos">
-<div class="logo-track">
-<div class="logo-item"><img src="assets/neovolt.png" alt="Neovolt logo"></div>
-<div class="logo-item"><img src="assets/foxess.png" alt="FoxESS logo"></div>
-<div class="logo-item"><img src="assets/dmegc.png" alt="DMEGC logo"></div>
-<div class="logo-item"><img src="assets/jinko.png" alt="JinkoSolar logo"></div>
-<div class="logo-item"><img src="assets/clenergy.png" alt="Clenergy logo"></div>
-<div class="logo-item"><img src="assets/neovolt.png" alt="Neovolt logo"></div>
-<div class="logo-item"><img src="assets/foxess.png" alt="FoxESS logo"></div>
-<div class="logo-item"><img src="assets/dmegc.png" alt="DMEGC logo"></div>
-<div class="logo-item"><img src="assets/jinko.png" alt="JinkoSolar logo"></div>
-<div class="logo-item"><img src="assets/clenergy.png" alt="Clenergy logo"></div>
-<div class="logo-item"><img src="assets/tnk.png" alt="TNK logo"></div>
+<h2>Customer Reviews</h2>
+
+<div class="grid">
+
+<div class="card review">
+"Great installation experience. Our electricity bill dropped dramatically."
+<br><br>⭐⭐⭐⭐⭐
 </div>
+
+<div class="card review">
+"Professional team and very competitive pricing."
+<br><br>⭐⭐⭐⭐⭐
 </div>
+
+<div class="card review">
+"Highly recommend Solfuture Energy for solar systems."
+<br><br>⭐⭐⭐⭐⭐
+</div>
+
+</div>
+
 </div>
 </section>
 
@@ -348,11 +285,49 @@ nav{flex-direction:column;gap:10px}
 </form>
 
 </div>
-
 </section>
 
-<footer>
+<section id="calculator">
+<div class="container">
+<h2>Solar Savings Calculator</h2>
+<div class="card">
+<p>Estimate your potential savings with solar + battery.</p>
+<input id="bill" type="number" placeholder="Monthly electricity bill ($)">
+<input id="sun" type="number" placeholder="Average daily sun hours" value="4">
+<button class="btn" onclick="calcSavings()">Calculate</button>
+<p id="result"></p>
+</div>
+</div>
+</section>
+
+<section id="quote-estimator">
+<div class="container">
+<h2>Instant Battery Quote Estimator</h2>
+<div class="grid">
+<div class="card">
+<h3>5kW + 28.8kWh</h3>
+<p>Estimated from $9,990 installed</p>
+</div>
+<div class="card">
+<h3>5kW + 48kWh</h3>
+<p>Estimated from $13,990 installed</p>
+</div>
+<div class="card">
+<h3>10kW + 48kWh</h3>
+<p>Estimated from $16,990 installed</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="reviews">
+<div class="container">
+<h2>Google Reviews</h2>
+<div class="grid">
+<div class="car
+
 <p>© 2026 Solfuture Energy</p>
+
 </footer>
 
 </body>
