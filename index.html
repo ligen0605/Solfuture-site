@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BF Consulting Group| Solar Panels & Battery Storage Australia</title>
-<meta name="description" content="BF Consulting Group provides residential and commercial solar panel installation, battery storage, EV chargers and energy optimisation across Australia.">
+<title>Solfuture Energy | Solar Panels & Battery Storage Australia</title>
+<meta name="description" content="Solfuture Energy provides residential and commercial solar panel installation, battery storage, EV chargers and energy optimisation across Australia.">
 <meta name="keywords" content="solar panels Australia, home battery, solar installation Melbourne, commercial solar">
 
 <style>
@@ -90,6 +90,84 @@ border-radius:6px;
 border:none
 }
 
+
+
+#brands{background:#ffffff}
+
+.logo-marquee{
+position:relative;
+overflow:hidden;
+padding:18px 0;
+}
+
+.logo-marquee::before,
+.logo-marquee::after{
+content:"";
+position:absolute;
+top:0;
+width:120px;
+height:100%;
+z-index:2;
+pointer-events:none;
+}
+
+.logo-marquee::before{
+left:0;
+background:linear-gradient(to right,#ffffff 0%,rgba(255,255,255,0) 100%);
+}
+
+.logo-marquee::after{
+right:0;
+background:linear-gradient(to left,#ffffff 0%,rgba(255,255,255,0) 100%);
+}
+
+.logo-track{
+display:flex;
+width:max-content;
+gap:22px;
+animation:brandScroll 28s linear infinite;
+align-items:center;
+}
+
+.logo-marquee:hover .logo-track{
+animation-play-state:paused;
+}
+
+.logo-item{
+flex:0 0 auto;
+width:220px;
+height:96px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#fff;
+border:1px solid #e5e7eb;
+border-radius:16px;
+box-shadow:0 10px 28px rgba(15,23,42,.08);
+padding:20px 26px;
+}
+
+.logo-item img{
+max-width:100%;
+max-height:48px;
+object-fit:contain;
+filter:grayscale(100%);
+opacity:.82;
+transition:all .25s ease;
+}
+
+.logo-item:hover img{
+filter:none;
+opacity:1;
+transform:scale(1.04);
+}
+
+@keyframes brandScroll{
+0%{transform:translateX(0)}
+100%{transform:translateX(calc(-50% - 11px))}
+}
+
+
 footer{
 background:#020617;
 color:white;
@@ -114,13 +192,13 @@ nav{flex-direction:column;gap:10px}
 <header>
 <div class="container">
 <nav>
-<div class="logo">BF Consulting</div>
+<div class="logo">Solfuture Energy</div>
 <div>
 <a href="#">Home</a>
 <a href="#services">Services</a>
 <a href="#packages">Packages</a>
 <a href="#projects">Projects</a>
-<a href="#reviews">Reviews</a>
+<a href="#brands">Brands</a>
 <a href="#contact">Contact</a>
 </div>
 </nav>
@@ -230,29 +308,24 @@ nav{flex-direction:column;gap:10px}
 </div>
 </section>
 
-<section id="reviews" class="benefits">
+<section id="brands">
 <div class="container">
-<h2>Customer Reviews</h2>
-
-<div class="grid">
-
-<div class="card review">
-"Great installation experience. Our electricity bill dropped dramatically."
-<br><br>⭐⭐⭐⭐⭐
+<h2>Trusted Brands We Work With</h2>
+<div class="logo-marquee" aria-label="Brand logos">
+<div class="logo-track">
+<div class="logo-item"><img src="assets/neovolt.svg" alt="Neovolt logo"></div>
+<div class="logo-item"><img src="assets/foxess.svg" alt="FoxESS logo"></div>
+<div class="logo-item"><img src="assets/dmegc.svg" alt="DMEGC logo"></div>
+<div class="logo-item"><img src="assets/jinko.svg" alt="JinkoSolar logo"></div>
+<div class="logo-item"><img src="assets/clenergy.svg" alt="Clenergy logo"></div>
+<div class="logo-item"><img src="assets/neovolt.svg" alt="Neovolt logo"></div>
+<div class="logo-item"><img src="assets/foxess.svg" alt="FoxESS logo"></div>
+<div class="logo-item"><img src="assets/dmegc.svg" alt="DMEGC logo"></div>
+<div class="logo-item"><img src="assets/jinko.svg" alt="JinkoSolar logo"></div>
+<div class="logo-item"><img src="assets/clenergy.svg" alt="Clenergy logo"></div>
+<div class="logo-item"><img src="assets/tnk.svg" alt="TNK logo"></div>
 </div>
-
-<div class="card review">
-"Professional team and very competitive pricing."
-<br><br>⭐⭐⭐⭐⭐
 </div>
-
-<div class="card review">
-"Highly recommend BF Consulting Group for solar systems."
-<br><br>⭐⭐⭐⭐⭐
-</div>
-
-</div>
-
 </div>
 </section>
 
@@ -276,10 +349,10 @@ nav{flex-direction:column;gap:10px}
 
 </div>
 
+</section>
 
-
-<p>© 2026 BF Consulting Group ABN 12 690 993 054</p>
-
+<footer>
+<p>© 2026 Solfuture Energy</p>
 </footer>
 
 </body>
