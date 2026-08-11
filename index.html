@@ -1,272 +1,510 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Solfuture Energy | Solar Panels & Battery Storage Australia</title>
-<meta name="description" content="Solfuture Energy provides residential and commercial solar panel installation, battery storage, EV chargers and energy optimisation across Australia.">
-<meta name="keywords" content="solar panels Australia, home battery, solar installation Melbourne, commercial solar">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solfuture Energy | Solar & Battery Solutions in Australia</title>
+  <meta name="description" content="Smarter solar, battery storage, commercial energy and EV charging solutions designed for Australian homes and businesses.">
+  <meta name="theme-color" content="#071b2f">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://solfuture-site.vercel.app/">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Solfuture Energy | Solar & Battery Solutions">
+  <meta property="og:description" content="Take control of your energy with solar, battery storage and EV charging solutions built around your property.">
+  <meta property="og:url" content="https://solfuture-site.vercel.app/">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=80">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2216%22 fill=%22%23071b2f%22/><path d=%22M35 6 16 35h14l-2 23 20-31H34z%22 fill=%22%23f7b32b%22/></svg>">
+  <style>
+    :root {
+      --navy-950: #04111f;
+      --navy-900: #071b2f;
+      --navy-800: #0d2943;
+      --navy-700: #153d5f;
+      --gold: #f7b32b;
+      --gold-dark: #d99000;
+      --sky: #e8f5f7;
+      --paper: #ffffff;
+      --ink: #132231;
+      --muted: #5a6977;
+      --line: #dbe4e8;
+      --shadow: 0 20px 55px rgba(4, 17, 31, .12);
+      --radius: 22px;
+    }
 
-<style>
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f4f6fb;color:#1f2937}
-.container{width:90%;max-width:1200px;margin:auto}
-header{background:#0f172a;color:white;padding:18px 0;position:sticky;top:0;z-index:10}
-nav{display:flex;justify-content:space-between;align-items:center}
-nav a{color:white;margin-left:24px;text-decoration:none;font-size:15px}
-nav a:hover{color:#f59e0b}
-.logo{font-size:22px;font-weight:bold}
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      color: var(--ink);
+      background: #f8faf9;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    button, input, textarea { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    :focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+    .skip-link {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 1000;
+      padding: 10px 16px;
+      border-radius: 10px;
+      background: var(--paper);
+      color: var(--navy-950);
+      transform: translateY(-150%);
+    }
+    .skip-link:focus { transform: translateY(0); }
+    .container { width: min(1160px, calc(100% - 40px)); margin-inline: auto; }
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--gold-dark);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .section-heading { max-width: 720px; margin-bottom: 44px; }
+    .section-heading.center { margin-inline: auto; text-align: center; }
+    h1, h2, h3 { margin-top: 0; color: var(--navy-950); line-height: 1.08; letter-spacing: -.035em; }
+    h1 { max-width: 800px; margin-bottom: 22px; color: white; font-size: clamp(2.65rem, 6vw, 5.45rem); }
+    h2 { margin-bottom: 18px; font-size: clamp(2rem, 4vw, 3.4rem); }
+    h3 { margin-bottom: 12px; font-size: 1.25rem; letter-spacing: -.015em; }
+    p { margin: 0 0 18px; }
+    .lead { color: var(--muted); font-size: clamp(1.04rem, 2vw, 1.2rem); }
+    .section { padding-block: clamp(76px, 9vw, 120px); }
+    .section-tint { background: #eef5f4; }
+    .button {
+      display: inline-flex;
+      min-height: 52px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 22px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      background: var(--gold);
+      color: var(--navy-950);
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+      cursor: pointer;
+    }
+    .button:hover { background: #ffc44c; box-shadow: 0 12px 24px rgba(247,179,43,.25); transform: translateY(-2px); }
+    .button-secondary { border-color: rgba(255,255,255,.35); background: rgba(255,255,255,.08); color: white; backdrop-filter: blur(8px); }
+    .button-secondary:hover { background: rgba(255,255,255,.16); box-shadow: none; }
+    .button svg { width: 18px; height: 18px; }
 
-.hero{
-background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url("https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1600&q=80") center/cover;
-color:white;
-padding:140px 20px;
-text-align:center
-}
+    header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+      background: rgba(4,17,31,.88);
+      color: white;
+      backdrop-filter: blur(16px);
+    }
+    .nav { display: flex; min-height: 76px; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; color: white; text-decoration: none; }
+    .brand-logo { width: auto; height: 68px; object-fit: contain; filter: drop-shadow(0 6px 14px rgba(0,0,0,.18)); }
+    .footer-brand .brand-logo { height: 96px; }
+    .brand-mark { display: grid; width: 36px; height: 36px; place-items: center; border-radius: 12px; background: var(--gold); color: var(--navy-950); box-shadow: 0 8px 22px rgba(247,179,43,.25); }
+    .brand-mark svg { width: 20px; }
+    .nav-links { display: flex; align-items: center; gap: 26px; }
+    .nav-links > a:not(.button), .nav-dropdown-toggle { position: relative; color: #e7eef3; font-size: .92rem; font-weight: 650; text-decoration: none; }
+    .nav-links > a:not(.button)::after { position: absolute; right: 0; bottom: -7px; left: 0; height: 2px; background: var(--gold); content: ""; transform: scaleX(0); transition: transform .2s ease; }
+    .nav-links > a:not(.button):hover::after { transform: scaleX(1); }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-toggle { display: inline-flex; align-items: center; gap: 6px; padding: 0; border: 0; background: transparent; cursor: pointer; }
+    .nav-dropdown-toggle svg { width: 15px; transition: transform .2s ease; }
+    .nav-dropdown.open .nav-dropdown-toggle svg { transform: rotate(180deg); }
+    .nav-dropdown-menu { position: absolute; top: calc(100% + 18px); left: 50%; display: grid; min-width: 220px; padding: 10px; border: 1px solid rgba(255,255,255,.12); border-radius: 15px; background: var(--navy-900); box-shadow: 0 18px 45px rgba(0,0,0,.3); opacity: 0; pointer-events: none; transform: translate(-50%, -8px); transition: opacity .2s ease, transform .2s ease; }
+    .nav-dropdown-menu::before { position: absolute; right: 0; bottom: 100%; left: 0; height: 20px; content: ""; }
+    .nav-dropdown-menu a { padding: 11px 13px; border-radius: 10px; color: #e7eef3; font-size: .9rem; font-weight: 650; text-decoration: none; }
+    .nav-dropdown-menu a:hover { background: rgba(255,255,255,.09); color: #ffd36e; }
+    .nav-dropdown.open .nav-dropdown-menu { opacity: 1; pointer-events: auto; transform: translate(-50%, 0); }
+    .nav-links .button { min-height: 42px; padding: 9px 18px; color: var(--navy-950); }
+    .menu-toggle { display: none; width: 44px; height: 44px; place-items: center; border: 1px solid rgba(255,255,255,.25); border-radius: 12px; background: transparent; color: white; cursor: pointer; }
+    .menu-toggle svg { width: 23px; }
 
-.hero h1{font-size:48px;margin-bottom:15px}
-.hero p{font-size:20px;margin-bottom:30px}
+    .hero { position: relative; min-height: 760px; display: grid; align-items: center; overflow: hidden; background: var(--navy-950); color: white; }
+    .hero-media { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: .56; }
+    .hero::after { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(4,17,31,.95) 0%, rgba(4,17,31,.69) 48%, rgba(4,17,31,.32) 100%), linear-gradient(0deg, rgba(4,17,31,.72), transparent 45%); content: ""; }
+    .hero-content { position: relative; z-index: 1; padding-block: 140px 82px; }
+    .hero .eyebrow { color: #ffd36e; }
+    .hero-copy { max-width: 660px; margin-bottom: 32px; color: #e5edf2; font-size: clamp(1.08rem, 2vw, 1.32rem); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; }
+    .hero-proof { display: grid; max-width: 770px; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 68px; overflow: hidden; border: 1px solid rgba(255,255,255,.18); border-radius: 18px; background: rgba(255,255,255,.18); }
+    .proof-item { padding: 20px 22px; background: rgba(4,17,31,.62); backdrop-filter: blur(12px); }
+    .proof-item strong { display: block; margin-bottom: 2px; color: white; font-size: 1rem; }
+    .proof-item span { color: #becbd5; font-size: .84rem; }
 
-.btn{
-display:inline-block;
-background:#f59e0b;
-color:white;
-padding:14px 26px;
-border-radius:6px;
-text-decoration:none;
-font-weight:bold
-}
-.btn:hover{background:#d97706}
+    .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .service-card { position: relative; min-height: 270px; padding: 28px; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper); transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+    .service-card:hover { border-color: #a9c8ca; box-shadow: var(--shadow); transform: translateY(-6px); }
+    .icon-wrap { display: grid; width: 52px; height: 52px; margin-bottom: 34px; place-items: center; border-radius: 16px; background: var(--sky); color: #0c7076; }
+    .icon-wrap svg { width: 25px; height: 25px; }
+    .service-card p { color: var(--muted); font-size: .94rem; }
 
-section{padding:80px 0}
-h2{text-align:center;margin-bottom:50px;font-size:32px}
+    .process { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(40px, 8vw, 100px); align-items: start; }
+    .process-intro { position: sticky; top: 120px; }
+    .steps { display: grid; gap: 16px; counter-reset: step; }
+    .step { display: grid; grid-template-columns: 54px 1fr; gap: 20px; padding: 24px; border: 1px solid var(--line); border-radius: 18px; background: white; counter-increment: step; }
+    .step::before { display: grid; width: 48px; height: 48px; place-items: center; border-radius: 50%; background: var(--navy-900); color: white; content: "0" counter(step); font-weight: 800; }
+    .step p { margin: 0; color: var(--muted); }
 
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px}
+    .package-group + .package-group { margin-top: 76px; }
+    .package-group-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+    .package-group-heading h3 { margin: 0; font-size: clamp(1.6rem, 3vw, 2.25rem); }
+    .package-group-heading p { max-width: 520px; margin: 0; color: var(--muted); text-align: right; }
+    .packages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .package-card { position: relative; display: flex; min-height: 490px; flex-direction: column; padding: 32px; border: 1px solid var(--line); border-radius: var(--radius); background: white; box-shadow: 0 12px 32px rgba(4,17,31,.06); }
+    .package-card.featured { border: 2px solid var(--gold); transform: translateY(-10px); }
+    .package-badge { position: absolute; top: -14px; left: 50%; padding: 5px 14px; border-radius: 99px; background: var(--gold); color: var(--navy-950); font-size: .75rem; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; transform: translateX(-50%); }
+    .package-kicker { color: #0d7378; font-size: .78rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .package-card h3 { min-height: 56px; margin-top: 12px; font-size: 1.42rem; }
+    .price { margin: 12px 0 5px; color: var(--navy-950); font-size: 2.45rem; font-weight: 850; letter-spacing: -.06em; line-height: 1; }
+    .price-note { color: var(--muted); font-size: .8rem; }
+    .package-list { display: grid; gap: 12px; margin: 24px 0 30px; padding: 0; list-style: none; }
+    .package-list li { display: flex; align-items: flex-start; gap: 9px; color: #3f5060; font-size: .92rem; }
+    .package-list svg { flex: 0 0 auto; width: 18px; margin-top: 3px; color: #16868b; }
+    .package-card .button { width: 100%; margin-top: auto; }
+    .disclaimer { max-width: 800px; margin: 24px auto 0; color: var(--muted); font-size: .8rem; text-align: center; }
 
-.card{
-background:white;
-padding:28px;
-border-radius:10px;
-box-shadow:0 8px 25px rgba(0,0,0,.08)
-}
+    .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .project-card { min-height: 285px; display: flex; flex-direction: column; justify-content: flex-end; padding: 28px; overflow: hidden; border-radius: var(--radius); background: linear-gradient(150deg, var(--navy-800), var(--navy-950)); color: white; }
+    .project-card:nth-child(2) { background: linear-gradient(150deg, #0b666c, #07383f); }
+    .project-card:nth-child(3) { background: linear-gradient(150deg, #835b0b, #362401); }
+    .project-type { margin-bottom: auto; color: rgba(255,255,255,.7); font-size: .78rem; font-weight: 750; letter-spacing: .1em; text-transform: uppercase; }
+    .project-card h3 { margin-bottom: 8px; color: white; font-size: 1.55rem; }
+    .project-card p { margin: 0; color: rgba(255,255,255,.74); }
 
-.package{text-align:center}
-.price{font-size:34px;color:#f59e0b;margin:10px 0}
+    .brands { overflow: hidden; }
+    .brand-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
+    .brand-card { display: grid; min-height: 130px; place-items: center; padding: 22px; border: 1px solid var(--line); border-radius: 18px; background: white; filter: grayscale(1); transition: filter .2s ease, transform .2s ease; }
+    .brand-card:hover { filter: grayscale(0); transform: translateY(-3px); }
+    .brand-card img { max-width: 155px; max-height: 74px; object-fit: contain; }
 
-.contact{
-background:#0f172a;
-color:white
-}
+    .contact-section { position: relative; overflow: hidden; background: var(--navy-950); color: white; }
+    .contact-section::before { position: absolute; top: -220px; right: -120px; width: 560px; height: 560px; border-radius: 50%; background: rgba(19,122,128,.22); content: ""; filter: blur(3px); }
+    .contact-layout { position: relative; display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(42px, 8vw, 90px); align-items: center; }
+    .contact-copy h2 { color: white; }
+    .contact-copy .lead { color: #becbd5; }
+    .contact-points { display: grid; gap: 15px; margin-top: 28px; }
+    .contact-point { display: flex; align-items: center; gap: 12px; color: #dce6ec; }
+    .contact-point svg { width: 20px; color: var(--gold); }
+    .quote-form { padding: clamp(24px, 5vw, 42px); border: 1px solid rgba(255,255,255,.13); border-radius: 26px; background: white; color: var(--ink); box-shadow: 0 24px 70px rgba(0,0,0,.28); }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .field { display: grid; gap: 7px; }
+    .field-full { grid-column: 1 / -1; }
+    label { color: #2c3d4d; font-size: .84rem; font-weight: 750; }
+    input, textarea, select { width: 100%; border: 1px solid #cfdadd; border-radius: 12px; background: #fbfcfc; color: var(--ink); }
+    input, select { min-height: 50px; padding: 0 14px; }
+    textarea { min-height: 120px; padding: 13px 14px; resize: vertical; }
+    input:focus, textarea:focus, select:focus { border-color: #18858a; outline: 3px solid rgba(24,133,138,.13); }
+    .quote-form .button { width: 100%; margin-top: 18px; border: 0; }
+    .quote-form .button:disabled { cursor: wait; opacity: .68; transform: none; box-shadow: none; }
+    .form-note, .form-status { margin: 12px 0 0; color: var(--muted); font-size: .78rem; }
+    .form-status { display: none; padding: 12px; border-radius: 10px; }
+    .form-status.show { display: block; }
+    .form-status.success { background: #e8f7ef; color: #145c38; }
+    .form-status.error { background: #fff0ed; color: #9b2d20; }
+    .honeypot { position: absolute !important; left: -10000px !important; width: 1px !important; height: 1px !important; overflow: hidden !important; }
 
-.contact input,.contact textarea{
-width:100%;
-padding:12px;
-margin-bottom:12px;
-border-radius:6px;
-border:none
-}
+    footer { padding: 34px 0; background: #020c16; color: #aab9c3; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    footer p { margin: 0; font-size: .85rem; }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { color: #d8e2e8; font-size: .85rem; text-decoration: none; }
 
-/* AUTO LOGO WALL */
-.logo-wall{
-position:relative;
-overflow:hidden;
-padding:10px 0;
-}
-
-.logo-track{
-display:flex;
-gap:28px;
-width:max-content;
-animation:logoScroll 28s linear infinite;
-}
-
-.logo-wall:hover .logo-track{
-animation-play-state:paused;
-}
-
-.brand-card{
-flex:0 0 260px;
-height:170px;
-background:white;
-border-radius:18px;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:22px;
-box-shadow:0 8px 25px rgba(0,0,0,.08);
-overflow:hidden;
-transition:transform .3s ease, box-shadow .3s ease;
-}
-
-.brand-card:hover{
-transform:translateY(-4px);
-box-shadow:0 12px 30px rgba(0,0,0,.12);
-}
-
-.brand-card img{
-width:100%;
-height:100%;
-object-fit:contain;
-display:block;
-}
-
-.logo-fade{
-position:absolute;
-top:0;
-bottom:0;
-width:80px;
-z-index:2;
-pointer-events:none;
-}
-
-.logo-fade.left{
-left:0;
-background:linear-gradient(to right, #f4f6fb 0%, rgba(244,246,251,0) 100%);
-}
-
-.logo-fade.right{
-right:0;
-background:linear-gradient(to left, #f4f6fb 0%, rgba(244,246,251,0) 100%);
-}
-
-@keyframes logoScroll{
-0%{transform:translateX(0);}
-100%{transform:translateX(-50%);}
-}
-
-footer{
-background:#020617;
-color:white;
-text-align:center;
-padding:30px
-}
-
-@media(max-width:768px){
-.hero h1{font-size:34px}
-nav{flex-direction:column;gap:10px}
-.brand-card{flex:0 0 220px;height:140px}
-}
-</style>
+    @media (max-width: 1020px) {
+      .nav-links { gap: 18px; }
+      .nav-links > a:not(.button) { display: none; }
+      .nav-dropdown { display: none; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .packages-grid, .projects-grid { grid-template-columns: 1fr 1fr; }
+      .package-card:last-child, .project-card:last-child { grid-column: 1 / -1; }
+      .package-card.featured { transform: none; }
+      .brand-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 760px) {
+      html { scroll-padding-top: 72px; }
+      .container { width: min(100% - 28px, 1160px); }
+      .section { padding-block: 72px; }
+      .nav { min-height: 74px; }
+      .brand-logo { height: 58px; }
+      .footer-brand .brand-logo { height: 88px; }
+      .menu-toggle { display: grid; }
+      .nav-links { position: absolute; top: calc(100% + 1px); right: 14px; left: 14px; display: none; padding: 16px; border: 1px solid rgba(255,255,255,.13); border-radius: 16px; background: var(--navy-900); box-shadow: var(--shadow); }
+      .nav-links.open { display: grid; }
+      .nav-links > a:not(.button) { display: block; padding: 11px 8px; }
+      .nav-links.open .nav-dropdown { display: block; }
+      .nav-dropdown-toggle { width: 100%; justify-content: space-between; padding: 11px 8px; }
+      .nav-dropdown-menu { position: static; display: none; min-width: 0; margin: 2px 0 6px; padding: 6px; border: 0; background: rgba(255,255,255,.06); box-shadow: none; opacity: 1; pointer-events: auto; transform: none; }
+      .nav-dropdown.open .nav-dropdown-menu { display: grid; transform: none; }
+      .nav-links .button { margin-top: 6px; }
+      .hero { min-height: 760px; }
+      .hero::after { background: linear-gradient(90deg, rgba(4,17,31,.92), rgba(4,17,31,.68)), linear-gradient(0deg, rgba(4,17,31,.76), transparent 45%); }
+      .hero-content { padding-block: 118px 62px; }
+      .hero-actions { align-items: stretch; flex-direction: column; }
+      .hero-actions .button { width: 100%; }
+      .hero-proof { grid-template-columns: 1fr; margin-top: 44px; }
+      .services-grid, .packages-grid, .projects-grid, .process, .contact-layout { grid-template-columns: 1fr; }
+      .package-card:last-child, .project-card:last-child { grid-column: auto; }
+      .process-intro { position: static; }
+      .brand-grid { grid-template-columns: 1fr 1fr; }
+      .form-grid { grid-template-columns: 1fr; }
+      .field-full { grid-column: auto; }
+      .package-group-heading { align-items: flex-start; flex-direction: column; gap: 8px; }
+      .package-group-heading p { text-align: left; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 430px) {
+      h1 { font-size: 2.55rem; }
+      .services-grid, .brand-grid { grid-template-columns: 1fr; }
+      .step { grid-template-columns: 46px 1fr; padding: 19px; gap: 14px; }
+      .step::before { width: 42px; height: 42px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EnergyBusiness",
+    "name": "Solfuture Energy",
+    "url": "https://solfuture-site.vercel.app/",
+    "description": "Residential and commercial solar, battery storage and EV charging solutions in Australia.",
+    "areaServed": { "@type": "Country", "name": "Australia" }
+  }
+  </script>
 </head>
-
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Solfuture Energy home"><img class="brand-logo" src="assets/solfuture-logo.png" alt="Solfuture Energy" width="900" height="731"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav id="primary-nav" class="nav-links" aria-label="Primary navigation">
+        <a href="#services">Services</a>
+        <a href="#process">How it works</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="package-menu">Packages <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="nav-dropdown-menu" id="package-menu">
+            <a href="#residential-packages">Residential packages</a>
+            <a href="#commercial-packages">Commercial packages</a>
+          </div>
+        </div>
+        <a href="#projects">Projects</a>
+        <a href="#brands">Brands</a>
+        <a class="button" href="#contact">Get a free quote</a>
+      </nav>
+    </div>
+  </header>
 
-<header>
-<div class="container">
-<nav>
-<div class="logo">Solfuture Energy</div>
-<div>
-<a href="#">Home</a>
-<a href="#services">Services</a>
-<a href="#packages">Packages</a>
-<a href="#projects">Projects</a>
-<a href="#brands">Brands</a>
-<a href="#contact">Contact</a>
-</div>
-</nav>
-</div>
-</header>
+  <main id="main">
+    <section id="top" class="hero" aria-labelledby="hero-title">
+      <picture>
+        <source media="(max-width: 760px)" srcset="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=900&q=76">
+        <img class="hero-media" src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1800&q=80" alt="Solar panel installation under an open sky" width="1800" height="1100" fetchpriority="high">
+      </picture>
+      <div class="container hero-content">
+        <p class="eyebrow">Solar • Battery • EV charging</p>
+        <h1 id="hero-title">Power your future with smarter energy.</h1>
+        <p class="hero-copy">Tailored solar and battery solutions for Australian homes and businesses—designed around how you use energy today and where you want to go next.</p>
+        <div class="hero-actions">
+          <a class="button" href="#contact">Get a free quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+          <a class="button button-secondary" href="#packages">Explore packages</a>
+        </div>
+        <div class="hero-proof" aria-label="Why choose Solfuture">
+          <div class="proof-item"><strong>Property-first design</strong><span>Solutions sized to your energy needs</span></div>
+          <div class="proof-item"><strong>Clear recommendations</strong><span>Understand the options before you decide</span></div>
+          <div class="proof-item"><strong>End-to-end support</strong><span>From initial quote through installation</span></div>
+        </div>
+      </div>
+    </section>
 
-<section class="hero">
-<h1>Solar Power For Your Future</h1>
-<p>Residential & Commercial Solar + Battery Storage Solutions</p>
-<a class="btn" href="#contact">Get Free Quote</a>
-</section>
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">What we do</p>
+          <h2>One energy partner, built around your property.</h2>
+          <p class="lead">Whether you are reducing household bills or managing a commercial site, we help you choose a practical system that fits.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card"><div class="icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></div><h3>Solar panel installation</h3><p>High-efficiency residential systems designed for your roof, usage profile and future plans.</p></article>
+          <article class="service-card"><div class="icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3V1M15 3V1M8.5 12h7M12 8.5v7"/></svg></div><h3>Battery storage</h3><p>Store more of your solar energy, improve resilience and reduce reliance on the grid.</p></article>
+          <article class="service-card"><div class="icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-5h6v5"/></svg></div><h3>Commercial solar</h3><p>Scalable energy solutions that help businesses reduce operating costs and plan with confidence.</p></article>
+          <article class="service-card"><div class="icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 3h10l2 8v7a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3v-7l2-8Z"/><path d="M5 11h14M9 15h.01M15 15h.01"/></svg></div><h3>EV charger installation</h3><p>Convenient home and workplace charging that can integrate with your solar and battery system.</p></article>
+        </div>
+      </div>
+    </section>
 
-<section id="services">
-<div class="container">
-<h2>Our Services</h2>
-<div class="grid">
-<div class="card"><h3>Solar Panel Installation</h3><p>High efficiency solar systems designed for Australian homes and businesses.</p></div>
-<div class="card"><h3>Battery Storage</h3><p>Store solar energy and reduce reliance on the grid with modern battery systems.</p></div>
-<div class="card"><h3>Commercial Solar</h3><p>Large scale solar solutions to reduce operating costs for businesses.</p></div>
-<div class="card"><h3>EV Charger Installation</h3><p>Smart EV charging integrated with your solar system.</p></div>
-</div>
-</div>
-</section>
+    <section id="process" class="section section-tint">
+      <div class="container process">
+        <div class="process-intro"><p class="eyebrow">A simpler path to solar</p><h2>From energy bill to installed system.</h2><p class="lead">Good decisions start with good information. Our process keeps every step clear and focused on your property.</p><a class="button" href="#contact">Start with a free quote</a></div>
+        <div class="steps">
+          <article class="step"><div><h3>Tell us about your property</h3><p>Share your energy goals, recent bill and the kind of system you are considering.</p></div></article>
+          <article class="step"><div><h3>Review a tailored recommendation</h3><p>We match system size, storage and equipment options to your usage and priorities.</p></div></article>
+          <article class="step"><div><h3>Confirm your installation plan</h3><p>Once you are comfortable with the proposal, the installation can be scheduled and prepared.</p></div></article>
+          <article class="step"><div><h3>Start using smarter energy</h3><p>Your system is commissioned and you receive the guidance needed to get more from it.</p></div></article>
+        </div>
+      </div>
+    </section>
 
-<section id="packages">
-<div class="container">
-<h2>Popular Battery Packages</h2>
-<div class="grid">
-<div class="card package">
-<h3>5kW Inverter + 28.8kWh Battery</h3>
-<p>AC coupled system with 28.8kWh battery storage</p>
-<div class="price">From $3,990</div>
-<p>Ideal for households of 2–3</p>
-<a class="btn" href="#contact">Enquire</a>
-</div>
+    <section id="packages" class="section">
+      <div class="container">
+        <div class="section-heading center"><p class="eyebrow">Solar &amp; battery packages</p><h2>A practical starting point for your quote.</h2><p class="lead">Choose Residential or Commercial, compare common configurations, then we will confirm what suits your property.</p></div>
+        <div class="package-group" id="residential-packages">
+          <div class="package-group-heading"><h3>Residential</h3><p>Solar and battery storage options designed around household energy use.</p></div>
+          <div class="packages-grid">
+            <article class="package-card"><p class="package-kicker">Everyday storage</p><h3>5kW inverter + 28.8kWh battery</h3><div class="price">$3,990</div><p class="price-note">Packages from*</p><ul class="package-list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>AC-coupled battery system</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Designed for smaller households</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Tailored system assessment</li></ul><a class="button package-enquiry" href="#contact" data-package="5kW inverter + 28.8kWh battery" data-interest="Battery storage">Enquire about this package</a></article>
+            <article class="package-card featured"><span class="package-badge">Popular</span><p class="package-kicker">Higher capacity</p><h3>5kW inverter + 48kWh battery</h3><div class="price">$4,990</div><p class="price-note">Packages from*</p><ul class="package-list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Large battery capacity</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Suited to larger households</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Tailored system assessment</li></ul><a class="button package-enquiry" href="#contact" data-package="5kW inverter + 48kWh battery" data-interest="Battery storage">Enquire about this package</a></article>
+            <article class="package-card"><p class="package-kicker">Higher output</p><h3>10kW inverter + 48kWh battery</h3><div class="price">$5,990</div><p class="price-note">Packages from*</p><ul class="package-list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Higher-power configuration</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>For high energy usage</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Tailored system assessment</li></ul><a class="button package-enquiry" href="#contact" data-package="10kW inverter + 48kWh battery" data-interest="Battery storage">Enquire about this package</a></article>
+          </div>
+          <p class="disclaimer">*Indicative “from” pricing only. Final pricing, eligibility, system design and available incentives depend on site conditions, location and current program requirements.</p>
+        </div>
+        <div class="package-group" id="commercial-packages">
+          <div class="package-group-heading"><h3>Commercial</h3><p>Scalable DC solar packages for commercial sites, subject to site assessment and final system design.</p></div>
+          <div class="packages-grid">
+            <article class="package-card featured"><span class="package-badge">Popular</span><p class="package-kicker">Commercial starter</p><h3>50kW DC solar package</h3><div class="price">$54,999</div><p class="price-note">Packages from*</p><ul class="package-list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>50kW DC system capacity</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Suited to smaller commercial sites</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Site-specific system assessment</li></ul><a class="button package-enquiry" href="#contact" data-package="50kW DC commercial solar package" data-interest="50kW DC commercial package">Enquire about this package</a></article>
+            <article class="package-card"><p class="package-kicker">Commercial growth</p><h3>100kW DC solar package</h3><div class="price">$64,999</div><p class="price-note">Packages from*</p><ul class="package-list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>100kW DC system capacity</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Built for higher daytime demand</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Site-specific system assessment</li></ul><a class="button package-enquiry" href="#contact" data-package="100kW DC commercial solar package" data-interest="100kW DC commercial package">Enquire about this package</a></article>
+            <article class="package-card featured"><span class="package-badge">Popular</span><p class="package-kicker">Commercial scale</p><h3>150kW DC solar package</h3><div class="price">$69,999</div><p class="price-note">Packages from*</p><ul class="package-list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>150kW DC system capacity</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>For larger commercial energy use</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Site-specific system assessment</li></ul><a class="button package-enquiry" href="#contact" data-package="150kW DC commercial solar package" data-interest="150kW DC commercial package">Enquire about this package</a></article>
+          </div>
+          <p class="disclaimer">*Commercial package prices exclude GST and are subject to applicable STC/VEEC incentive policies, eligibility requirements, site conditions and final system design.</p>
+        </div>
+      </div>
+    </section>
 
-<div class="card package">
-<h3>5kW Inverter + 48kWh Battery</h3>
-<p>Large battery capacity for energy independence</p>
-<div class="price">From $4,990</div>
-<p>Best choice for large house and full rebate</p>
-<a class="btn" href="#contact">Enquire</a>
-</div>
+    <section id="projects" class="section section-tint">
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow">Recent installations</p><h2>Energy solutions for different spaces.</h2></div>
+        <div class="projects-grid">
+          <article class="project-card"><p class="project-type">Residential</p><h3>Melbourne home</h3><p>10kW solar system designed for household energy needs.</p></article>
+          <article class="project-card"><p class="project-type">Commercial</p><h3>Warehouse installation</h3><p>50kW solar installation supporting day-to-day operations.</p></article>
+          <article class="project-card"><p class="project-type">Hybrid</p><h3>Solar + battery</h3><p>Integrated generation and storage for greater energy control.</p></article>
+        </div>
+      </div>
+    </section>
 
-<div class="card package">
-<h3>10kW Inverter + 48kWh Battery</h3>
-<p>Higher power with large battery storage</p>
-<div class="price">From $5,990</div>
-<p>Best choice for high power usage and full rebate</p>
-<a class="btn" href="#contact">Enquire</a>
-</div>
-</div>
-</div>
-</section>
+    <section id="brands" class="section brands">
+      <div class="container">
+        <div class="section-heading center"><p class="eyebrow">Trusted technology</p><h2>Brands we work with.</h2><p class="lead">A system is only as good as the products behind it.</p></div>
+        <div class="brand-grid">
+          <div class="brand-card"><img src="assets/neovolt.png" alt="Neovolt" width="460" height="240" loading="lazy" decoding="async"></div>
+          <div class="brand-card"><img src="assets/foxess.png" alt="FoxESS" width="460" height="240" loading="lazy" decoding="async"></div>
+          <div class="brand-card"><img src="assets/sigenergy.png" alt="Sigenergy" width="2048" height="425" loading="lazy" decoding="async"></div>
+          <div class="brand-card"><img src="assets/hanersun.png" alt="Hanersun" width="520" height="60" loading="lazy" decoding="async"></div>
+          <div class="brand-card"><img src="assets/jinko.png" alt="Jinko Solar" width="460" height="240" loading="lazy" decoding="async"></div>
+          <div class="brand-card"><img src="assets/clenergy.png" alt="Clenergy" width="460" height="240" loading="lazy" decoding="async"></div>
+        </div>
+      </div>
+    </section>
 
-<section id="projects">
-<div class="container">
-<h2>Recent Installations</h2>
-<div class="grid">
-<div class="card"><h3>Melbourne Residential</h3><p>10kW solar system installed.</p></div>
-<div class="card"><h3>Commercial Warehouse</h3><p>50kW solar installation.</p></div>
-<div class="card"><h3>Solar + Battery</h3><p>Hybrid solar and battery storage system.</p></div>
-</div>
-</div>
-</section>
+    <section id="contact" class="section contact-section">
+      <div class="container contact-layout">
+        <div class="contact-copy"><p class="eyebrow">Free, no-pressure quote</p><h2>Ready to see what fits your property?</h2><p class="lead">Tell us a little about your energy needs. We will use those details to start a more useful conversation.</p><div class="contact-points"><div class="contact-point"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg><span>Residential and commercial enquiries</span></div><div class="contact-point"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg><span>Solar, battery and EV charging options</span></div><div class="contact-point"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg><span>Clear, property-specific recommendations</span></div></div></div>
+        <form class="quote-form" id="quote-form" action="https://formsubmit.co/ajax/sales@solfuture.com.au" method="post">
+          <input type="hidden" name="_subject" value="New Solfuture website enquiry">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <div class="form-grid">
+            <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
+            <div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
+            <div class="field field-full"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+            <div class="field field-full"><label for="interest">Select a service or package</label><select id="interest" name="interest" required><option value="">Select an option</option><optgroup label="Residential"><option>Solar panels</option><option>Battery storage</option><option>Solar + battery</option><option>EV charging</option></optgroup><optgroup label="Commercial"><option>Commercial solar</option><option>50kW DC commercial package</option><option>100kW DC commercial package</option><option>150kW DC commercial package</option></optgroup></select></div>
+            <div class="field field-full"><label for="message">Tell us about your property or energy goals</label><textarea id="message" name="message"></textarea></div>
+          </div>
+          <div class="honeypot" aria-hidden="true"><label for="website">Leave this field empty</label><input id="website" name="_honey" type="text" tabindex="-1" autocomplete="off"></div>
+          <button class="button" type="submit" data-idle-label="Request my free quote">Request my free quote</button>
+          <p class="form-note">Your details should only be used to respond to this enquiry.</p>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
 
-<section id="brands">
-<div class="container">
-<h2>Trusted Brands We Work With</h2>
+  <footer>
+    <div class="container footer-inner"><a class="brand footer-brand" href="#top" aria-label="Solfuture Energy home"><img class="brand-logo" src="assets/solfuture-logo.png" alt="Solfuture Energy" width="900" height="731" loading="lazy" decoding="async"></a><p>© <span id="year">2026</span> Solfuture Energy. All rights reserved.</p><nav class="footer-links" aria-label="Footer"><a href="#services">Services</a><a href="#contact">Contact</a></nav></div>
+  </footer>
 
-<div class="logo-wall">
-<div class="logo-fade left"></div>
-<div class="logo-fade right"></div>
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('#primary-nav');
+    const packageDropdown = document.querySelector('.nav-dropdown');
+    const packageToggle = document.querySelector('.nav-dropdown-toggle');
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+    });
+    nav.addEventListener('click', event => {
+      if (event.target.matches('a')) {
+        nav.classList.remove('open');
+        packageDropdown.classList.remove('open');
+        packageToggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Open navigation');
+      }
+    });
+    packageToggle.addEventListener('click', () => {
+      const open = packageDropdown.classList.toggle('open');
+      packageToggle.setAttribute('aria-expanded', String(open));
+    });
+    document.querySelectorAll('.package-enquiry').forEach(link => {
+      link.addEventListener('click', () => {
+        const packageName = link.dataset.package;
+        document.querySelector('#interest').value = link.dataset.interest;
+        document.querySelector('#message').value = `I'm interested in the ${packageName}. Please tell me whether it suits my property.`;
+      });
+    });
+    document.querySelector('#quote-form').addEventListener('submit', async event => {
+      event.preventDefault();
+      const form = event.currentTarget;
+      const submitButton = form.querySelector('button[type="submit"]');
+      const status = document.querySelector('#form-status');
+      const data = Object.fromEntries(new FormData(form).entries());
 
-<div class="logo-track">
-<div class="brand-card"><img src="assets/neovolt.png" alt="Neovolt logo"></div>
-<div class="brand-card"><img src="assets/foxess.png" alt="FoxESS logo"></div>
-<div class="brand-card"><img src="assets/dmegc.png" alt="DMEGC logo"></div>
-<div class="brand-card"><img src="assets/jinko.png" alt="Jinko logo"></div>
-<div class="brand-card"><img src="assets/clenergy.png" alt="Clenergy logo"></div>
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending enquiry…';
+      status.className = 'form-status';
+      status.textContent = '';
 
-<div class="brand-card"><img src="assets/neovolt.png" alt="Neovolt logo"></div>
-<div class="brand-card"><img src="assets/foxess.png" alt="FoxESS logo"></div>
-<div class="brand-card"><img src="assets/dmegc.png" alt="DMEGC logo"></div>
-<div class="brand-card"><img src="assets/jinko.png" alt="Jinko logo"></div>
-<div class="brand-card"><img src="assets/clenergy.png" alt="Clenergy logo"></div>
-</div>
-</div>
-</div>
-</section>
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(data),
+        });
+        const result = await response.json().catch(() => ({}));
 
-<section id="contact" class="contact">
-<div class="container">
-<h2>Get A Free Quote</h2>
-<form>
-<input type="text" placeholder="Your Name">
-<input type="email" placeholder="Email">
-<input type="text" placeholder="Phone Number">
-<textarea placeholder="Tell us about your solar needs"></textarea>
-<button class="btn">Submit</button>
-</form>
-</div>
-</section>
+        if (!response.ok || result.success === false || result.success === 'false') {
+          throw new Error(result.message || 'We could not send your enquiry. Please try again.');
+        }
 
-<footer>
-<p>© 2026 Solfuture Energy</p>
-</footer>
-
+        form.reset();
+        status.textContent = 'Thanks — your enquiry has been sent to Solfuture Energy. We’ll be in touch soon.';
+        status.className = 'form-status show success';
+      } catch (error) {
+        status.textContent = error.message || 'We could not send your enquiry. Please try again.';
+        status.className = 'form-status show error';
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = submitButton.dataset.idleLabel;
+      }
+    });
+    document.querySelector('#year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
