@@ -15,6 +15,9 @@
 - Marked the 50kW and 150kW commercial options as Popular and added the commercial pricing note: prices exclude GST and remain subject to applicable STC/VEEC incentive policies.
 - Exported the supplied Adobe Illustrator logo to a transparent, web-optimised PNG and integrated it into the header and footer.
 - Updated the partner brand wall with official Sigenergy and Hanersun logos and removed DMEGC.
+- Replaced the temporary Vercel canonical and social URL with the official `https://www.solfuture.com.au/` address.
+- Added `robots.txt` and `sitemap.xml` for search-engine discovery.
+- Added the public phone number and email as clickable contact details and included them in structured data.
 
 ## Before publishing
 
@@ -26,7 +29,7 @@ The quote form now uses FormSubmit and sends enquiries to `sales@solfuture.com.a
 
 The form uses FormSubmit's table email template, customer email as Reply-To and a hidden honeypot field. CAPTCHA is disabled to keep the AJAX form experience on the current page. FormSubmit is a third-party processor and says submissions are retained for 30 days.
 
-Also replace the placeholder Vercel canonical URL if the business has a custom domain, and add real business contact details, service locations, privacy policy and verified credentials when available.
+Also add service locations, a privacy policy and any further verified credentials when available.
 
 ## Deploy
 
