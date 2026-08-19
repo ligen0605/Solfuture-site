@@ -218,6 +218,17 @@
     .form-status.error { background: #fff0ed; color: #9b2d20; }
     .honeypot { position: absolute !important; left: -10000px !important; width: 1px !important; height: 1px !important; overflow: hidden !important; }
 
+    .accreditations { padding: 38px 0; border-top: 1px solid var(--line); background: white; }
+    .accreditations-inner { display: flex; align-items: center; justify-content: space-between; gap: 42px; }
+    .accreditations-copy { max-width: 420px; }
+    .accreditations-copy .eyebrow { margin-bottom: 7px; }
+    .accreditations-copy p:last-child { margin: 0; color: var(--muted); font-size: .9rem; }
+    .accreditation-logos { display: flex; align-items: stretch; gap: 14px; }
+    .accreditation-logo { display: grid; width: 230px; min-height: 108px; place-items: center; padding: 14px 18px; border: 1px solid var(--line); border-radius: 16px; background: #fff; transition: border-color .2s ease, transform .2s ease; }
+    .accreditation-logo:hover { border-color: #a9c8ca; transform: translateY(-2px); }
+    .accreditation-logo img { width: 100%; height: 78px; object-fit: contain; mix-blend-mode: multiply; }
+    .accreditation-logo:first-child img { width: 98px; }
+
     footer { padding: 34px 0; background: #020c16; color: #aab9c3; }
     .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
     footer p { margin: 0; font-size: .85rem; }
@@ -264,11 +275,16 @@
       .field-full { grid-column: auto; }
       .package-group-heading { align-items: flex-start; flex-direction: column; gap: 8px; }
       .package-group-heading p { text-align: left; }
+      .accreditations-inner { align-items: flex-start; flex-direction: column; gap: 24px; }
+      .accreditation-logos { width: 100%; }
+      .accreditation-logo { width: 50%; }
       .footer-inner { align-items: flex-start; flex-direction: column; }
     }
     @media (max-width: 430px) {
       h1 { font-size: 2.55rem; }
       .services-grid, .brand-grid { grid-template-columns: 1fr; }
+      .accreditation-logos { flex-direction: column; }
+      .accreditation-logo { width: 100%; }
       .step { grid-template-columns: 46px 1fr; padding: 19px; gap: 14px; }
       .step::before { width: 42px; height: 42px; }
     }
@@ -431,6 +447,23 @@
           <p class="form-note">Your details should only be used to respond to this enquiry.</p>
           <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
         </form>
+      </div>
+    </section>
+
+    <section class="accreditations" aria-label="Accreditations and consumer protection">
+      <div class="container accreditations-inner">
+        <div class="accreditations-copy">
+          <p class="eyebrow">Accreditations &amp; consumer protection</p>
+          <p>Approved seller standards and installation by appropriately accredited professionals.</p>
+        </div>
+        <div class="accreditation-logos">
+          <a class="accreditation-logo" href="https://www.newenergytech.org.au/find-an-approved-seller" target="_blank" rel="noopener noreferrer" aria-label="Verify NETCC Approved Seller status">
+            <img src="assets/netcc-approved-seller.jpg" alt="New Energy Tech Consumer Code" width="650" height="426" loading="lazy" decoding="async">
+          </a>
+          <a class="accreditation-logo" href="https://saaustralia.com.au/accreditation-status-check/" target="_blank" rel="noopener noreferrer" aria-label="Check Solar Accreditation Australia status">
+            <img src="assets/solar-accreditation-australia.jpg" alt="Solar Accreditation Australia" width="892" height="470" loading="lazy" decoding="async">
+          </a>
+        </div>
       </div>
     </section>
   </main>
